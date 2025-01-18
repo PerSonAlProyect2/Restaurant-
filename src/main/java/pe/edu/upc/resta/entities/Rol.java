@@ -2,6 +2,8 @@ package pe.edu.upc.resta.entities;
 
 import jakarta.persistence.*;
 
+@Entity
+@Table(name = "Rol")
 public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
