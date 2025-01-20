@@ -3,7 +3,7 @@ package pe.edu.upc.resta.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Rol")
+@Table(name = "Rol", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "nombreRol"})})
 public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +13,7 @@ public class Rol {
     private String nombreRol;
 
     @ManyToOne
-    @JoinColumn(name ="user_id", nullable = false)
+    @JoinColumn(name ="user_id")
     private Users user;
 
     public Rol() {}
